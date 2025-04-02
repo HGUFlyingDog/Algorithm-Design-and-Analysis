@@ -28,13 +28,14 @@ void merge_sort(vector<int>& T, int head, int tail)
 		int mid = (head + tail) / 2;
 		merge_sort(T, head, mid);
 		merge_sort(T, mid + 1, tail);
-		merge(T, head, mid, tail);
+		merge(T, head, tail);
 	}
 }
 
-void merge(vector<int>& T, int head, int mid, int tail)
+void merge(vector<int>& T, int head, int tail)
 {
 	vector<int>A, B;
+	int mid = (head + tail) / 2;
 	for (int i = head; i <= mid; i++)
 	{
 		A.push_back(T[i]);
@@ -47,33 +48,29 @@ void merge(vector<int>& T, int head, int mid, int tail)
 	int a = 0;
 	int b = 0;
 
-	for (int i = 0; i <= tail; )
-	{
-		if (A[a] <= B[b])
-		{
+	for (int i = head; i <= tail; ) {
+		if (A[a] <= B[b]) {
 			T[i++] = A[a++];
 		}
-		else
-		{
+		else {
 			T[i++] = B[b++];
 		}
 
-		if (a == A.size())
-		{
-			while (b < B.size())
-			{
-				T[i]=B[b++];
+		// 处理剩余元素时，必须递增 i
+		if (a == A.size()) {
+			while (b < B.size()) {
+				T[i++] = B[b++]; // 这里增加 i++
 			}
 			break;
 		}
 
-		if (b == B.size())
-		{
-			while (a < A.size())
-			{
-				T[i] = (A[a++]);
+		if (b == B.size()) {
+			while (a < A.size()) {
+				T[i++] = A[a++]; // 这里增加 i++
 			}
 			break;
 		}
 	}
-}
+
+
+}	

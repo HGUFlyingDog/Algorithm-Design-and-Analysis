@@ -17,7 +17,8 @@ int main()
 	// 
 	//递归形式的归并排序
 	merge_sort(T, 0, T.size() - 1);
-	
+	//merge(T, 0, T.size()-1);
+
 	////if (T[0] != 1)
 	//{
 	//	cout << "ERRROR" << endl;
