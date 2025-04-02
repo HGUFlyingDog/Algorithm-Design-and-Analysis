@@ -16,7 +16,7 @@ int main()
 	// 
 	// 
 	//递归形式的归并排序
-	merge_sort(T, 0, T.size() - 1);
+	//merge_sort(T, 0, T.size() - 1);
 	//merge(T, 0, T.size()-1);
 
 	////if (T[0] != 1)
@@ -24,6 +24,8 @@ int main()
 	//	cout << "ERRROR" << endl;
 	//	return 2;
 	//}
+
+	search(T, 0, T.size() - 1,3);
 
 	for (auto ch:T)
 	{

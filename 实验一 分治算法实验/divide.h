@@ -10,5 +10,7 @@ bool readfile(vector<int>& T);
 
 void merge_sort(vector<int>& T, int head, int tail);
 void merge(vector<int>& T, int head,  int tail);
+void search(vector<int>& T, int head, int tail,int k);
+
 
 
